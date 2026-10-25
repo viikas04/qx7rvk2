@@ -1,0 +1,17 @@
+# One command to run everything:  docker compose up --build
+# then open http://localhost:8080
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATA_MODE: auto   # use backend/data snapshot if present, else fetch live from Elexon
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8080:8080"

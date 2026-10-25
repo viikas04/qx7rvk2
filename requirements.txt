@@ -1,0 +1,5 @@
+# Used by Vercel for the Python function in api/ (mirrors backend/requirements.txt)
+fastapi==0.162.0
+httpx==0.28.1
+pandas==3.0.5
+numpy==2.5.3
