@@ -7,18 +7,18 @@ A UK utility buys its day-ahead power on the day before delivery. Wind covers pa
 1. **What did the forecast say when we had to decide?** For any delivery day and decision time, it shows the newest forecast that had been published by then, against what actually happened.
 2. **How much can we trust it?** It measures forecast error over the period and turns it into numbers the desk can act on, such as how much backup to hold to be covered 9 times out of 10.
 
-**Live app:** <!-- paste your Vercel URL here --> `https://<your-app>.vercel.app`
+**Live app:** https://qx7rvk2.vercel.app
 
 ---
 
 ## What's in the app
 
-| View | What it answers |
-| --- | --- |
-| **Summary** | The pilot's key findings for the client in plain statements, each linked to the evidence. |
-| **Decision day** | Pick a delivery day and decision time (UK). See the forecast the desk could act on, older forecasts, and (optionally) forecasts published after the decision, against actual generation. A canvas-drawn grid shows how every forecast run for that day evolved and how wrong each one was. |
+| View                  | What it answers                                                                                                                                                                                                                                                                                                                                           |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Summary**           | The pilot's key findings for the client in plain statements, each linked to the evidence.                                                                                                                                                                                                                                                                 |
+| **Decision day**      | Pick a delivery day and decision time (UK). See the forecast the desk could act on, older forecasts, and (optionally) forecasts published after the decision, against actual generation. A canvas-drawn grid shows how every forecast run for that day evolved and how wrong each one was.                                                                |
 | **Forecast accuracy** | Interactive backup planner (pick a cover level, see the MW needed and how often the desk would still be short, drawn on the chart); typical miss (MAE), RMSE, bias, coverage; forecast vs actual over the whole period (zoomable); misses by forecast wind level; error vs lead time; error distribution; error by hour of day; error by day. CSV export. |
-| **How it works** | The method in plain English, for the client. |
+| **How it works**      | The method in plain English, for the client.                                                                                                                                                                                                                                                                                                              |
 
 Every setting lives in the URL, so any view can be shared as a link.
 
@@ -34,6 +34,7 @@ Two decision rules are supported:
 **Scope.** Decisions made in January 2026 cover delivery days 2 January to 1 February 2026 (a decision on 31 Jan is for 1 Feb). Data for 1 January is also loaded for the fixed-lead view. Only forecasts 0–48 h ahead are considered.
 
 **Data used.** Only the two Elexon datasets in the brief, at national level:
+
 - Actuals: [`FUELHH`](https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/FUELHH/stream) with `fuelType = WIND` (`startTime`, `generation`)
 - Forecasts: [`WINDFOR`](https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream) (`startTime`, `publishTime`, `generation`)
 
